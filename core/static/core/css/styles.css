@@ -502,3 +502,13 @@ body {
   width:  82px;
   height: 70px;
 }
+
+.btn-outline-custom {
+  color: #ffffff !important; /* Color del texto y borde */
+  border-color: #ffffff !important;
+}
+
+.btn-outline-custom:hover {
+  background-color: #0073a6 !important; /* Color de fondo al hacer hover */
+  color: #ffffff !important; /* Color del texto al hacer hover */
+}
