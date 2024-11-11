@@ -29,11 +29,11 @@
 }
 
 body {  
-  background: linear-gradient(to right, #180f28, #4357ab, #130823);
+  background: linear-gradient(to right, #dcdcdc, #ffffff, #dcdcdc);
 }
 
 .logo {
-  width: 40px;
+  width: 200px;
   margin-right: 10px;
 }
 
