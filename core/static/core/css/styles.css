@@ -503,7 +503,6 @@ body {
   height: 70px;
 }
 
-<<<<<<< HEAD
 .btn-outline-custom {
   color: #ffffff !important; /* Color del texto y borde */
   border-color: #ffffff !important;
@@ -513,7 +512,6 @@ body {
   background-color: #0073a6 !important; /* Color de fondo al hacer hover */
   color: #ffffff !important; /* Color del texto al hacer hover */
 }
-=======
 .navbar-custom {
   background-color: #013B55; /* Color de fondo: celeste más oscuro */
 }
@@ -535,4 +533,3 @@ body {
   background-color: #006b99;
   color: #FFFFFF; /* Color de texto y fondo en el hover del menú desplegable */
 }
->>>>>>> 2914abea21ea238b6c5bbb40d5aaaf6b3020edf9
