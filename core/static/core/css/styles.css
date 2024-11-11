@@ -503,6 +503,7 @@ body {
   height: 70px;
 }
 
+<<<<<<< HEAD
 .btn-outline-custom {
   color: #ffffff !important; /* Color del texto y borde */
   border-color: #ffffff !important;
@@ -512,3 +513,26 @@ body {
   background-color: #0073a6 !important; /* Color de fondo al hacer hover */
   color: #ffffff !important; /* Color del texto al hacer hover */
 }
+=======
+.navbar-custom {
+  background-color: #013B55; /* Color de fondo: celeste más oscuro */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom .navbar-toggler-icon,
+.navbar-custom .dropdown-toggle {
+  color: #FFFFFF !important; /* Color de texto blanco */
+}
+.navbar-custom .nav-link:hover,
+.navbar-custom .dropdown-toggle:hover,
+.navbar-custom .nav-link.active {
+  color: #FFFFFF !important; /* Color de texto blanco más claro al pasar el mouse */
+}
+.navbar-custom .dropdown-menu .dropdown-item {
+  color: #000000; /* Color de texto en el menú desplegable */
+}
+.navbar-custom .dropdown-menu .dropdown-item:hover {
+  background-color: #006b99;
+  color: #FFFFFF; /* Color de texto y fondo en el hover del menú desplegable */
+}
+>>>>>>> 2914abea21ea238b6c5bbb40d5aaaf6b3020edf9
