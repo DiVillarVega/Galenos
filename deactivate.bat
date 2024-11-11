@@ -1,0 +1,1 @@
+call C:\ProyectosDjango\Galenos\.venv\Scripts\deactivate.bat
