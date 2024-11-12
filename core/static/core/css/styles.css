@@ -3,6 +3,7 @@
   border: 1px solid red;
 }  */
 
+
 .card-link {
   display: block;
   text-decoration: none;
@@ -115,11 +116,11 @@ body {
 }
 
 .letra{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .white-text{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
@@ -129,47 +130,16 @@ body {
 }
 
 .cute-font-regular {
-  font-family: "Cute Font", sans-serif;
   font-weight: 800;
-  font-size:4em;
+  font-size:2em;
   font-optical-sizing: auto;
   font-style: normal;
   text-align: center;
 }
 
 .neon {
-	color: #ffffff;
-	text-shadow:
-		0 0 5px rgba(0,178,255,1),
-		0 0 10px rgba(0,178,255,1),
-		0 0 15px rgba(0,178,255,1),
-		0 0 20px rgba(38,104,127,1),
-		0 0 25px rgba(38,104,127,1),
-		0 0 30px rgba(38,104,127,1),
-		0 0 35px rgba(38,104,127,1),
-		0 0 40px rgba(38,104,127,1),
-		0 0 45px rgba(38,104,127,1);
+	color: #000000;
 }
-
-
-.boton_registro{
-  background: linear-gradient(to right, #022267,#044ff2, #022267); 
-  border: none; 
-  color: rgb(255, 255, 255) !important; 
-  padding: 10px 20px; 
-  text-align: center; 
-  display: inline-block;
-  width: auto;  
-}
-
-.boton_registro:hover{
-  background: linear-gradient(to right, #010f2e,#023093, #010f2e); 
-  box-shadow:
-  0 0 5px rgba(0,178,255,1),
-  0 0 20px rgba(38,104,127,1);
-}
-
-
 
 .boton_verde {
   background: linear-gradient(to right, #005b01, #28b856, #005b01);
@@ -532,4 +502,18 @@ body {
 .navbar-custom .dropdown-menu .dropdown-item:hover {
   background-color: #006b99;
   color: #FFFFFF; /* Color de texto y fondo en el hover del menú desplegable */
+}
+
+.boton_registro{
+  background: #0073a6 !important; 
+  color: #ffffff !important; 
+  padding: 10px 20px; 
+  text-align: center; 
+  display: inline-block;
+  width: auto;  
+}
+
+.boton_registro:hover{
+  background: #013b55 !important;
+  color: white !important;
 }
