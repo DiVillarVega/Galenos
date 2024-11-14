@@ -12,7 +12,7 @@
                 <!-- Formulario de registro de cliente -->
                 <form method="POST" id="formulario_usuarios" enctype="multipart/form-data" class="white-text">
                   {% csrf_token %}
-                  <div class="container-fluid">
+                  <div class="container">
                       <div class="row">
                           <div class="col-sm-12 col-md-4">
                               {{ form_usuario|as_bootstrap_form:'help_text_visible=False' }}
@@ -55,60 +55,62 @@
                         </div>
                     </div>
                 </form>
+                <br><br>
   <!-- AREA DE TABLA DE USUARIOS -->
 
-  {% if usuarios %} 
+            {% if usuarios %} 
 
-    <table id="tabla-principal" class="table table-hover">
-      <thead>
-        <tr>
-          <th> ID </th>
-          <th> Cuenta </th>
-          <th> Tipo usuario </th>
-          <th> Nombre </th>
-          <th> Apellidos </th>
-          <th> Correo </th>
-          <th> RUT </th>
-          <th> Subscrito </th>
-          <th> Imagen </th>
-          <th> Acciones </th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for usuario in usuarios %}
-          
+              <table id="tabla-principal" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th> ID </th>
+                    {% comment %} <th> Cuenta </th> {% endcomment %}
+                    <th> Tipo usuario </th>
+                    <th> Nombre </th>
+                    <th> Apellidos </th>
+                    <th> Correo </th>
+                    <th> RUT </th>
+                    {% comment %} <th> Subscrito </th>
+                    <th> Imagen </th> {% endcomment %}
+                    <th> Acciones </th>
+                  </tr>
+                </thead>
 
-          <td>{{usuario.id}}</td>
-          <td>{{usuario.username}}</td>
-          <td>{{usuario.perfil.tipo_usuario}}</td>
-          <td>{{usuario.first_name}}</td>
-          <td>{{usuario.last_name}}</td>
-          <td>{{usuario.email}}</td>
-          <td>{{usuario.perfil.rut}}</td>
-          
-            <td> {% if usuario.perfil.subscrito %} Sí {% else %} No {% endif %} </td>
-            <td>
-              <img src="{{ usuario.perfil.imagen.url }}" class="usuario-sm" alt="">
-            </td>
-            <td>
-              <div class="btn-group">
-                <a href="{% url 'usuarios' 'actualizar' usuario.id %}" class="btn btn-primary btn-sm boton_celeste"> Editar </a>
-                <a href="{% url 'usuarios' 'eliminar' usuario.id %}" class="btn btn-danger btn-sm boton_rojo"> Eliminar </a>
-                <form action="{% url 'cambiar_password' %}" method="post" id="form_{{ usuario.username }}">
-                  {% csrf_token %}
-                  <input type="hidden" id="username" name="username" value="{{ usuario.username }}">
-                  <button class="btn btn-info btn-sm boton_gris" id="id_generar_password" onclick="document.getElementById('form_{{ usuario.username }}').submit();"> Contraseña </button>
-                </form>
-              </div>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  
+                <tbody>
+                  {% for usuario in usuarios %}
+                    <tr>
 
-  
-  {% endif %} 
+                      <td>{{usuario.id}}</td>
+                      {% comment %} <td>{{usuario.username}}</td> {% endcomment %}
+                      <td>{{usuario.perfil.tipo_usuario}}</td>
+                      <td>{{usuario.first_name}}</td>
+                      <td>{{usuario.last_name}}</td>
+                      <td>{{usuario.email}}</td>
+                      <td>{{usuario.perfil.rut}}</td>
+                      
+                        {% comment %} <td> {% if usuario.perfil.subscrito %} Sí {% else %} No {% endif %} </td>
+                        <td>
+                          <img src="{{ usuario.perfil.imagen.url }}" class="usuario-sm" alt="">
+                        </td> {% endcomment %}
+                        <td>
+                          <div class="btn-group">
+                            <a href="{% url 'usuarios' 'actualizar' usuario.id %}" class="btn btn-sm boton_celeste"> Editar </a>
+                            <a href="{% url 'usuarios' 'eliminar' usuario.id %}" class="btn btn-sm boton_rojo"> Eliminar </a>
+                            {% comment %} <form action="{% url 'cambiar_password' %}" method="post" id="form_{{ usuario.username }}">
+                              {% csrf_token %}
+                              <input type="hidden" id="username" name="username" value="{{ usuario.username }}">
+                              <button class="btn btn-info btn-sm boton_gris" id="id_generar_password" onclick="document.getElementById('form_{{ usuario.username }}').submit();"> Contraseña </button>
+                            </form> {% endcomment %}
+                          </div>
+                        </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            
+
+            
+            {% endif %} 
             </section>
         </div>
     </main>

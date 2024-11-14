@@ -159,7 +159,7 @@ body {
 }
 
 .boton_rojo {
-  background: linear-gradient(to right, #670202, #f20404, #670202);
+  background:  #f20404 !important;
   border: none;
   color: rgb(255, 255, 255) !important;
   padding: 10px 20px;
@@ -169,14 +169,11 @@ body {
 }
 
 .boton_rojo:hover {
-  background: linear-gradient(to right, #2e0101, #930202, #2e0101);
-  box-shadow:
-    0 0 5px rgba(255, 0, 0, 1),
-    0 0 20px rgba(127, 38, 38, 1);
+  background:#7e0202 !important;
 }
 
 .boton_celeste {
-  background: linear-gradient(to right, #044FF2, #2798FF,#044FF2);
+  background:  #0073a6 !important;
   border: none;
   color: rgb(255, 255, 255) !important;
   padding: 10px 20px;
@@ -186,29 +183,9 @@ body {
 }
 
 .boton_celeste:hover {
-  background: linear-gradient(to right,#023093, #1A74F6, #023093);
-  box-shadow:
-    0 0 5px rgb(9, 99, 255),
-    0 0 20px rgb(17, 28, 124);
-}
+  background:#043c54 !important;
 
-.boton_gris {
-  background: linear-gradient(to right, #424447, #81868b,#424447);
-  border: none;
-  color: rgb(255, 255, 255) !important;
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  width: auto;
 }
-
-.boton_gris:hover {
-  background: linear-gradient(to right,#2a2a2b, #5b5f64, #2a2a2b);
-  box-shadow:
-    0 0 5px rgb(90, 96, 105),
-    0 0 20px rgb(47, 47, 49);
-}
-
 
 .index_ficha{
   background: none;  
