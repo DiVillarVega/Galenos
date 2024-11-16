@@ -7,14 +7,16 @@
     <main role="main">
         <div class="container">
             <section class="text center">
-                <h1 class="cute-font-regular neon">INGRESAR</h1>
                 <br>
 
                             <div class="row justify-content-center ">
+
+
                                 <form id="formulario_login" method="POST" class="col-5 border border-3 p-4 white-text">
                             
                                   {% csrf_token %} 
-                                  
+                                  <h1 class="cute-font-regular neon">Iniciar sesión</h1>
+                                    <br>
                                   <!-- Botones -->
                                   {{ form|as_bootstrap_form }}
                                   

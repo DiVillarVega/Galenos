@@ -30,13 +30,19 @@
 }
 
 body {  
-  background: linear-gradient(to right, #dcdcdc, #ffffff, #dcdcdc);
+  background: #f1f1f1;
 }
 
 .logo {
-  width: 200px;
+  width: 40px;
   margin-right: 10px;
 }
+
+.logo2 {
+  height: 50px;
+  margin-right: 10px;
+}
+
 
 .thumbnail-product {
   height: 150px !important;
@@ -130,15 +136,15 @@ body {
 }
 
 .cute-font-regular {
-  font-weight: 800;
-  font-size:2em;
+  font-weight: 700;
+  font-size:1.8em;
   font-optical-sizing: auto;
   font-style: normal;
   text-align: center;
 }
 
 .neon {
-	color: #000000;
+	color: #0073a6;
 }
 
 .boton_verde {
@@ -459,6 +465,16 @@ body {
   background-color: #0073a6 !important; /* Color de fondo al hacer hover */
   color: #ffffff !important; /* Color del texto al hacer hover */
 }
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #013B55;
+}
+
 .navbar-custom {
   background-color: #013B55; /* Color de fondo: celeste más oscuro */
 }
@@ -466,7 +482,9 @@ body {
 .navbar-custom .nav-link,
 .navbar-custom .navbar-toggler-icon,
 .navbar-custom .dropdown-toggle {
-  color: #FFFFFF !important; /* Color de texto blanco */
+  color: #FFFFFF !important;/* Color de texto blanco */
+  font-weight: 600;
+  font-size: small;
 }
 .navbar-custom .nav-link:hover,
 .navbar-custom .dropdown-toggle:hover,
@@ -479,6 +497,74 @@ body {
 .navbar-custom .dropdown-menu .dropdown-item:hover {
   background-color: #006b99;
   color: #FFFFFF; /* Color de texto y fondo en el hover del menú desplegable */
+}
+
+.navbar-left .logo {
+  height: 50px;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: right !important;
+}
+
+.navbar-right .nav-link, .navbar-right .nav-icon {
+  margin-left: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-right .badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #8bc24a;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #8bc24a;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.search-bar {
+  width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-button {
+  background-color: #0073a6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #8ddfff;
+  color: white;
+}
+
+.search-button i {
+  color: #fff;
 }
 
 .boton_registro{
@@ -494,3 +580,25 @@ body {
   background: #013b55 !important;
   color: white !important;
 }
+
+.login-button {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #013b55;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.login-button img {
+  margin-right: 0.4rem;
+}
+.login-button:hover {
+  background-color: #8ddfff;
+}
+
