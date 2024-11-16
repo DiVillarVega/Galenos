@@ -7,50 +7,79 @@
     <main role="main">
         <div class="container">
             <section class="text center">
-                <h1 class="cute-font-regular neon">REGISTRO</h1>
+
                 <br>
 
-                <!-- Formulario de registro de cliente -->
-                <form method="POST" id="formulario_registro" enctype="multipart/form-data" class="white-text">
-                    {% csrf_token %}
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-4">
-                                {{ form_usuario|as_bootstrap_form:'help_text_visible=False' }}
-                            </div>
-
-                            <div class="col-sm-12 col-md-5">
-                                {{ form_perfil|as_bootstrap_form }}
-                            </div>
-                            
-                            <!-- foto de perfil -->
-                            <div class="col-sm-12 col-md-3">
-                                <br>
-                                <div class="row">
-                                    <div class="col-sm-12" style="height: 220px">
-                                        <img src="{% static 'core/img/perfil.webp'%}" alt="" class="user-image" id="cuadro-imagen">
-                                        <br>
-                                        <button class="btn btn-primary boton_registro" onclick="event.preventDefault(); document.getElementById('id_imagen').click();">Seleccionar imagen</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- fin foto perfil -->
+            <!-- Formulario de registro de cliente -->
+            <form method="POST" id="formulario_registro" enctype="multipart/form-data" class="cuadro_login3" >         
+                {% csrf_token %}
+                <h1 class="cute-font-regular neon"> Registro</h1>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        
+                        <div class="form-group position-relative">
+                            <input type="text" id="username" name="username" class="form-control" required>
+                            <label for="username" class="floating-label">RUT</label>
+                            <p class="info"> Ingrese RUT sin puntos y con guión </p>
 
                         </div>
 
-
-                        <div class="row">
-                            <div class="col text-center">
-                                <button type="submit" class="btn btn-primary boton_registro">Registrarse</button>
-                                <button type="reset" id="limpiar_formulario_registro" class="btn btn-primary boton_registro">Limpiar</button>
-                            </div>
+                        <div class="form-group position-relative">
+                            <input type="text" id="first_name" name="first_name" class="form-control" required>
+                            <label for="first_name" class="floating-label">Nombre</label>
                         </div>
+
+                        <div class="form-group position-relative">
+                            <input type="text" id="last_name" name="last_name" class="form-control" required>
+                            <label for="last_name" class="floating-label">Apellido</label>
+                        </div>
+
+                        <div class="form-group position-relative">
+                            <input type="text" id="email" name="email" class="form-control" required>
+                            <label for="email" class="floating-label">Correo</label>
+                        </div>
+                                         
+                        
                     </div>
 
-                </form>
-            </section>
-        </div>
-    </main>
+                    <div class="col-md-6">
+
+                        <div class="form-group position-relative">
+                            <input type="text" id="direccion" name="direccion" class="form-control" required>
+                            <label for="direccion" class="floating-label">Dirección</label>
+                        </div>
+                                                
+                        <div class="form-group position-relative">
+                            <input type="password" id="password" name="password" class="form-control" required>
+                            <label for="password" class="floating-label">Contraseña</label>
+                        </div>
+
+                        <div class="form-group position-relative">
+                            <input type="password" id="password2" name="password2" class="form-control" required>
+                            <label for="password2" class="floating-label">Confirmar contraseña</label>
+                        </div>
+
+                        <div class="col text-center">
+                            <button type="submit" class="boton_registro">Registrarse</button>
+                        </div>
+                        
+                    </div>
+                    <br><br>
+                    <div class="text-center">
+                        <br>
+                        ¿Tienes una cuenta? <a href="{% url 'ingresar' %}" class="letra-azuul-bold align-items-center">Inicia sesión</a>
+                    </div>  
+                    
+                </div>
+
+                
+            </form>
+            <br>
+        </section>
+        <br><br><br>
+</main>
 {% endblock content %}
 
 {% block script %}

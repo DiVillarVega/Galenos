@@ -4,6 +4,11 @@
 }  */
 
 
+.info{
+  color: #929292;
+  font-size:0.7em;
+}
+
 .card-link {
   display: block;
   text-decoration: none;
@@ -142,7 +147,7 @@ body {
 }
 
 .boton_registro{
-  background-color: #8bc24a !important; 
+  background-color: #0073a6!important; 
   border: none;
   color: rgb(0, 0, 0); 
   text-align: center;
@@ -158,6 +163,28 @@ body {
   border: 5px solid rgb(#bcbcbc);
   padding: 20px;
   width: 350px;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.cuadro_login3 {
+  border: 5px solid rgb(#bcbcbc);
+  padding: 40px;
+  width: 80%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.cuadro_login4 {
+  border: 5px solid rgb(#bcbcbc);
+  padding: 60px;
+  width: 900px;
   height: auto;
   background-color: white;
   margin: 0 auto;
