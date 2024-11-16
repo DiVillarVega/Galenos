@@ -5,28 +5,25 @@
 {% block content %}
     <!-- contenido principal -->
     <main role="main">
-
-        <div class="custom-div">
-
-          </div>
           <section class="text center" >
 
-                <br><br>
+                <br>
                 <div class="justify-content-center">
                     <form id="formulario_login" method="POST" class="border align-items-center cuadro_login">
                         <div class="text-center">
-                            <h1>    Iniciar sesión</h1>
+                            <h1 class="cute-font-regular neon"> Iniciar sesión</h1>
                         </div>  
                         <br><br>   
                         {% csrf_token %}
                         <!-- Botones -->
-                        <div class="input-group">
-                            {{ form.username }}
-                            <label for="username" class="label">Cuenta</label>
+                        <div class="form-group position-relative">
+                            <input type="text" id="cuenta" name="username" class="form-control" required>
+                            <label for="cuenta" class="floating-label">Cuenta</label>
                         </div>
-                        <div class="input-group">
-                            {{ form.password }}
-                            <label for="password" class="label">Contraseña</label>
+                        
+                        <div class="form-group position-relative">
+                            <input type="password" id="password" name="password" class="form-control" required>
+                            <label for="password" class="floating-label">Contraseña</label>
                         </div>
 
                         <div class="text-center mt-4">

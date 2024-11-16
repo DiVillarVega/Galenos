@@ -72,7 +72,7 @@ body {
 .cuadro_login {
   border: 5px solid rgb(#bcbcbc);
   padding: 30px;
-  width: 450px;
+  width: 350px;
   height: auto;
   background-color: white;
   margin: 0 auto;
@@ -111,6 +111,20 @@ body {
 }
 
 .label {
+  display: block;
+  margin-bottom: 0.5rem;
+  position: absolute;
+  left: 15px;
+  color: #797777;
+  pointer-events: none;
+  transform: translateY(15px);
+  font-size: 15px;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  padding: 0.2em;
+}
+
+.label2 {
   position: absolute;
   left: 15px;
   color: #797777;
@@ -118,7 +132,7 @@ body {
   transform: translateY(15px);
   font-size: 18px;
   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: white;
+  background-color: none;
   padding: 0 .2em;
 }
 
@@ -143,7 +157,7 @@ body {
 .cuadro_login2 {
   border: 5px solid rgb(#bcbcbc);
   padding: 20px;
-  width: 450px;
+  width: 350px;
   height: auto;
   background-color: white;
   margin: 0 auto;
@@ -159,7 +173,7 @@ body {
 
 .input-group {
   position: relative;
-  margin-bottom: 1.5em; /* Añadido margen para espaciar los campos */
+  margin-bottom: 1.8em; /* Añadido margen para espaciar los campos */
 }
 
 .text-center {
@@ -168,21 +182,52 @@ body {
 
 .input:focus, .input:valid {
   outline: none;
-  border: 1.5px solid #8bc24a;
+  border: 1.8px solid #0073a6;
 }
 
 .input:focus ~ .label, .input:valid ~ .label {
   transform: translateX(-10%) translateY(-50%) scale(0.9);
-  color: #8bc24a;
+  color: #0073a6;
 }
 
 .input:focus ~ .label2, .input:valid ~ .label {
   transform: translateX(-6%) translateY(-20%) scale(0.9);
-  color: #8bc24a;
+  color: #0073a6;
   background-color: rgb(255, 255, 255);
   width: auto;
 }
 
+/* .form-group {
+  margin-bottom: 15px;
+  width: 100%; /* Asegura que el div ocupe todo el ancho disponible */
+  /* margin-bottom: 1rem;
+} */
+
+/* .form-group label {
+  font-weight: bold;
+  color: #333;
+} */
+
+/* .form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} */
+
+.text-center {
+  text-align: center;
+}
+
+.input-lg {
+  font-size: 1.25rem;
+  padding: 10px;
+  width: 150px;
+}
 
 .cuadro_neon {
   box-shadow:
@@ -390,6 +435,7 @@ body {
 }
 
 .file-input {
+  display: block;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -609,16 +655,6 @@ body {
   font-size: 0.8rem;
 }
 
-.badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #8bc24a;
-  color: #fff;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 12px;
-}
 
 .search-bar {
   width: 300px;
@@ -679,5 +715,39 @@ body {
 }
 .login-button:hover {
   background-color: #8ddfff;
+}
+
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+  color: #797777;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 1rem;
+}
+
+.form-control:focus ~ .floating-label,
+.form-control:not(:placeholder-shown) ~ .floating-label {
+  top: 0;
+  left: 15px;
+  font-size: 12px;
+  color: #0073a6; /* Cambia el color del label al enfocarse */
+  background-color: white;
 }
 
