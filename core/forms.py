@@ -84,11 +84,10 @@ class RegistroUsuarioForm(UserCreationForm):
 class RegistroPerfilForm(ModelForm):
     class Meta:
         model = Perfil
-        fields = ['rut', 'direccion', 'subscrito', 'imagen']
+        fields = ['direccion', 'subscrito']
         exclude = ['tipo_usuario']
         widgets = {
             'direccion': forms.Textarea(),
-            'imagen': forms.FileInput(),
         }
 
 
@@ -116,8 +115,7 @@ class UsuarioForm(ModelForm):
 class PerfilForm(ModelForm):
     class Meta:
         model = Perfil
-        fields = ['tipo_usuario', 'rut', 'direccion', 'subscrito', 'imagen']
+        fields = ['tipo_usuario', 'direccion', 'subscrito']
         widgets = {
-            'direccion': Textarea(attrs={'cols': 80, 'rows': 20}),
-            'imagen': FileInput(),
+            'direccion': Textarea(attrs={'cols': 80, 'rows': 20})
         }

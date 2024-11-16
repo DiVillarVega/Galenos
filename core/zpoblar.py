@@ -17,7 +17,7 @@ def exec_sql(query):
         cursor.execute(query)
 
 def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario, 
-    es_staff, rut, direccion, subscrito, imagen):
+    es_staff, direccion, subscrito):
 
     try:
         print(f'Verificar si existe usuario {username}.')
@@ -52,14 +52,12 @@ def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario,
             usuario.user_permissions.set(permisos)
             usuario.save()
  
-        print(f'    Crear perfil: RUT {rut}, Subscrito {subscrito}, Imagen {imagen}')
+        print(f'    Crear perfil:Subscrito {subscrito}')
         Perfil.objects.create(
             usuario=usuario, 
             tipo_usuario=tipo,
-            rut=rut,
             direccion=direccion,
-            subscrito=subscrito,
-            imagen=imagen)
+            subscrito=subscrito)
         print("    Creado correctamente")
     except Exception as err:
         print(f"    Error: {err}")
@@ -88,82 +86,15 @@ def poblar_bd(test_user_email=''):
     eliminar_tablas()
 
     crear_usuario(
-        username='ggarrido',
-        tipo='Cliente', 
-        nombre='Gonzalo', 
-        apellido='Garrido', 
-        correo=test_user_email if test_user_email else 'ggarrido@duocuc.cl', 
-        es_superusuario=False, 
-        es_staff=False, 
-        rut='21.722.181-1',	
-        direccion='Chorrillo 1885, Rancagua, \nRancagua 40301 \nChile', 
-        subscrito=True, 
-        imagen='perfiles/ggarrido.jpg')
-
-    crear_usuario(
-        username='castorga',
-        tipo='Cliente', 
-        nombre='Camila', 
-        apellido='Astorga', 
-        correo=test_user_email if test_user_email else 'castorga@duocuc.cl', 
-        es_superusuario=False, 
-        es_staff=False, 
-        rut='20.881.159-2', 
-        direccion='San José, Villa Alemana, \nValparaíso 50401 \nChile', 
-        subscrito=True, 
-        imagen='perfiles/castorga.jpg')
-
-    crear_usuario(
         username='mcaceres',
         tipo='Cliente', 
         nombre='Mauricio', 
         apellido='Cáceres', 
         correo=test_user_email if test_user_email else 'mcaceres@duocuc.cl', 
         es_superusuario=False, 
-        es_staff=False, 
-        rut='12.066.692-4', 
+        es_staff=False,
         direccion='Calle F 304 J Goulart, \nLa Granja, Región Metropolitana \nChile', 
-        subscrito=False, 
-        imagen='perfiles/mcaceres.jpg')
-
-    crear_usuario(
-        username='arodriguez',
-        tipo='Cliente', 
-        nombre='Alejandra', 
-        apellido='Rodriguez', 
-        correo=test_user_email if test_user_email else 'arodriguez@duocuc.cl', 
-        es_superusuario=False, 
-        es_staff=False, 
-        rut='12.845.980-4', 
-        direccion='Condominio Algarrobal 2 Parcela V- 57, \nChicureo, Región Metropolitana 58118 \nChile', 
-        subscrito=False, 
-        imagen='perfiles/arodriguez.jpg')
-
-    crear_usuario(
-        username='ggarmendia',
-        tipo='Administrador', 
-        nombre='Germán', 
-        apellido='Garmendia', 
-        correo=test_user_email if test_user_email else 'ggarmendia@duocuc.cl', 
-        es_superusuario=False, 
-        es_staff=True, 
-        rut='21.332.042-4	', 
-        direccion='Chorrillo 1885, Rancagua, \nRancagua 20391 \nChile', 
-        subscrito=False, 
-        imagen='perfiles/ggarmendia.jpg')
-    
-    crear_usuario(
-        username='mbeltrami',
-        tipo='Administrador', 
-        nombre='Mia', 
-        apellido='Beltrami', 
-        correo=test_user_email if test_user_email else 'mbeltrami@duocuc.cl', 
-        es_superusuario=False, 
-        es_staff=True, 
-        rut='23.033.054-9', 
-        direccion='Los Cerezos 255, Ñuñoa \nRegión Metropolitana 21920 \nChile', 
-        subscrito=False, 
-        imagen='perfiles/mbeltrami.jpg')
+        subscrito=False)
 
     crear_usuario(
         username='gboric',
@@ -173,10 +104,8 @@ def poblar_bd(test_user_email=''):
         correo=test_user_email if test_user_email else 'gboric@duocuc.cl',
         es_superusuario=True,
         es_staff=True,
-        rut='16.163.631-2',
         direccion='	21 De Mayo 2144, Punta Arenas, \nMagallanes 90231 \nChile',
-        subscrito=False,
-        imagen='perfiles/gboric.jpg')
+        subscrito=False)
     
     categorias_data = [
         { 'id': 1, 'nombre': 'Acción'},
@@ -401,100 +330,6 @@ def poblar_bd(test_user_email=''):
     for producto in productos_data:
         Producto.objects.create(**producto)
     print('Productos creados correctamente')
-
-    print('Crear carritos')
-    for rut in ['12.845.980-4', '12.066.692-4']:
-        cliente = Perfil.objects.get(rut=rut)
-        for cantidad_productos in range(1, 11):
-            producto = Producto.objects.get(pk=randint(1, 10))
-            if cliente.subscrito:
-                descuento_subscriptor = producto.descuento_subscriptor
-            else:
-                descuento_subscriptor = 0
-            descuento_oferta = producto.descuento_oferta
-            descuento_total = descuento_subscriptor + descuento_oferta
-            descuentos = int(round(producto.precio * descuento_total / 100))
-            precio_a_pagar = producto.precio - descuentos
-            Carrito.objects.create(
-                cliente=cliente,
-                producto=producto,
-                precio=producto.precio,
-                descuento_subscriptor=descuento_subscriptor,
-                descuento_oferta=descuento_oferta,
-                descuento_total=descuento_total,
-                descuentos=descuentos,
-                precio_a_pagar=precio_a_pagar
-            )
-    print('Carritos creados correctamente')
-
-    print('Crear boletas')
-    nro_boleta = 0
-    perfiles_cliente = Perfil.objects.filter(tipo_usuario='Cliente')
-    for cliente in perfiles_cliente:
-        estado_index = -1
-        for cant_boletas in range(1, randint(6, 21)):
-            nro_boleta += 1
-            estado_index += 1
-            if estado_index > 3:
-                estado_index = 0
-            estado = Boleta.ESTADO_CHOICES[estado_index][1]
-            fecha_venta = date(2023, randint(1, 5), randint(1, 28))
-            fecha_despacho = fecha_venta + timedelta(days=randint(0, 3))
-            fecha_entrega = fecha_despacho + timedelta(days=randint(0, 3))
-            if estado == 'Anulado':
-                fecha_despacho = None
-                fecha_entrega = None
-            elif estado == 'Vendido':
-                fecha_despacho = None
-                fecha_entrega = None
-            elif estado == 'Despachado':
-                fecha_entrega = None
-            boleta = Boleta.objects.create(
-                nro_boleta=nro_boleta, 
-                cliente=cliente,
-                monto_sin_iva=0,
-                iva=0,
-                total_a_pagar=0,
-                fecha_venta=fecha_venta,
-                fecha_despacho=fecha_despacho,
-                fecha_entrega=fecha_entrega,
-                estado=estado)
-            detalle_boleta = []
-            total_a_pagar = 0
-            for cant_productos in range(1, randint(4, 6)):
-                producto_id = randint(1, 10)
-                producto = Producto.objects.get(id=producto_id)
-                precio = producto.precio
-                descuento_subscriptor = 0
-                if cliente.subscrito:
-                    descuento_subscriptor = producto.descuento_subscriptor
-                descuento_oferta = producto.descuento_oferta
-                descuento_total = descuento_subscriptor + descuento_oferta
-                descuentos = int(round(precio * descuento_total / 100))
-                precio_a_pagar = precio - descuentos
-                bodega = Bodega.objects.create(producto=producto)
-                DetalleBoleta.objects.create(
-                    boleta=boleta,
-                    bodega=bodega,
-                    precio=precio,
-                    descuento_subscriptor=descuento_subscriptor,
-                    descuento_oferta=descuento_oferta,
-                    descuento_total=descuento_total,
-                    descuentos=descuentos,
-                    precio_a_pagar=precio_a_pagar)
-                total_a_pagar += precio_a_pagar
-            monto_sin_iva = int(round(total_a_pagar / 1.19))
-            iva = total_a_pagar - monto_sin_iva
-            boleta.monto_sin_iva = monto_sin_iva
-            boleta.iva = iva
-            boleta.total_a_pagar = total_a_pagar
-            boleta.fecha_venta = fecha_venta
-            boleta.fecha_despacho = fecha_despacho
-            boleta.fecha_entrega = fecha_entrega
-            boleta.estado = estado
-            boleta.save()
-            print(f'    Creada boleta Nro={nro_boleta} Cliente={cliente.usuario.first_name} {cliente.usuario.last_name}')
-    print('Boletas creadas correctamente')
 
     print('Agregar productos a bodega')
     for producto_id in range(1, 11):
