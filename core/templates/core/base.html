@@ -80,7 +80,7 @@
                   <a class="login-button dropdown-toggle dropbtn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <img src="{% static 'core/img/user.png' %}" alt="User Icon" width="24" height="24">
                       {% if user.is_superuser %}
-                          <span class="text-danger fw-bold">
+                          <span class="fw-bold">
                       {% elif user.is_staff %}
                           <span class="text-success fw-bold">
                       {% else %}

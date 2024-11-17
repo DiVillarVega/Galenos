@@ -3,6 +3,16 @@
   border: 1px solid red;
 }  */
 
+.especialidad{
+  width: 40px;
+  display: block;
+  margin-right: 10px;
+}
+
+.tabla{
+  width: 90%;
+  margin: 0 auto;
+}
 
 .info{
   color: #929292;
@@ -172,8 +182,8 @@ body {
 
 .cuadro_login3 {
   border: 5px solid rgb(#bcbcbc);
-  padding: 40px;
-  width: 80%;
+  padding: 30px;
+  width: 90%;
   height: auto;
   background-color: white;
   margin: 0 auto;
@@ -190,6 +200,11 @@ body {
   margin: 0 auto;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
+}
+
+.text_esp{
+  color: #0073a6;
+  font-size: 1.2em;
 }
 
 .letra-azuul-bold {

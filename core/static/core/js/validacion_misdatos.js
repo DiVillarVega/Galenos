@@ -107,7 +107,7 @@ $(document).ready(function() {
       },
       messages: {
         'username': {
-          required: 'Debe ingresar un nombre de usuario',
+          required: 'Debe ingresar un RUT',
         },
         'first_name': {
           required: 'Debe ingresar su nombre',

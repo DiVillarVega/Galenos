@@ -86,7 +86,7 @@ class RegistroUsuarioForm(UserCreationForm):
             'required': True,
             'name': 'username'
         }),
-        label="Nombre de usuario"
+        label="RUT"
     )
     first_name = forms.CharField(
         widget=forms.TextInput(attrs={

@@ -99,7 +99,7 @@ def validar_username_repetido(username, excluded_username=None, request=None, ad
         else:
             User.objects.get(username=username)
         if add_error_messages:
-            messages.add_message(request, messages.ERROR, f'Nombre de usuario: El nombre de usuario "{username}" ya existe en la base de datos.')
+            messages.add_message(request, messages.ERROR, f'RUT: El RUT "{username}" ya existe en la base de datos.')
         return False
     except User.DoesNotExist:
         return True
