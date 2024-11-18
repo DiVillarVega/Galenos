@@ -40,9 +40,7 @@ $(document).ready(function() {
     $('#id_subscrito').wrap('<div class="row"></div>');
     $('#id_subscrito').wrap('<div class="col-sm-1" id="checkbox-subscrito"></div>');
     $('#checkbox-subscrito').after('<div id="help_text_id_subscrito" class="col-sm-11"></div>');
-    $('#help_text_id_subscrito').text(`Deseo subscribirme con un aporte
-      de $3.000 mensuales a la fundación "Help a Brother" y obtner un 
-      5% de descuento en todas mis compras.`);
+    $('#help_text_id_subscrito').text(`Deseo recibir correos acerca de informaciones de Centro Médico Galenos`);
   }
 
   // BOTON DE SELECCIONAR IMAGEN: Cuando se selecciona una nueva imagen usando el botón,

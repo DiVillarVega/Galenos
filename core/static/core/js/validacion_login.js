@@ -1,5 +1,31 @@
 $(document).ready(function() {
 
+   // Agregar método de validación para RUT chileno
+   $.validator.addMethod("rutChileno", function(value, element) {
+
+    // Validar que el RUT tenga el formato correcto (8 o 9 dígitos + guión + dígito verificador)
+    var rutPattern = /^\d{7,8}-[\dK]$/;
+    if (!rutPattern.test(value)) {
+        return false;
+    }
+
+    // Validar el dígito verificador
+    var rutSinGuion = value.replace("-", "");
+    var rut = rutSinGuion.slice(0, -1);
+    var dv = rutSinGuion.slice(-1);
+    var factor = 2;
+    var sum = 0;
+    for (var i = rut.length - 1; i >= 0; i--) {
+        sum += parseInt(rut.charAt(i)) * factor;
+        factor = factor === 7 ? 2 : factor + 1;
+    }
+    var dvCalculado = 11 - (sum % 11);
+    dvCalculado = dvCalculado === 11 ? "0" : dvCalculado === 10 ? "K" : dvCalculado.toString();
+
+    return dv === dvCalculado;
+  }, "El RUT no es válido (escriba sin puntos y con guión)");
+
+
    // Agregar método de validación para correo
    $.validator.addMethod("emailCompleto", function(value, element) {
 
@@ -16,7 +42,8 @@ $(document).ready(function() {
     {
       rules: {
         'username': {
-          required: true
+          required: true,
+          rutChileno: true
         },
         'password': {
           required: true
@@ -24,7 +51,8 @@ $(document).ready(function() {
       },
       messages: {
         'username': {
-          required: 'El usuario es un campo obligatorio.'
+          required: 'El usuario es un campo obligatorio.',
+          rutChileno: 'El RUT no es válido (escriba sin puntos y con guión)'
         },
         'password': {
           required: 'La contraseña es un campo requerido.'

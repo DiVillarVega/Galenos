@@ -86,6 +86,50 @@ def poblar_bd(test_user_email=''):
     eliminar_tablas()
 
     crear_usuario(
+        username='21037761-1',
+        tipo='Superusuario',
+        nombre='Diego',
+        apellido='Villar',
+        correo=test_user_email if test_user_email else 'di.villar@duocuc.cl',
+        es_superusuario=True,
+        es_staff=True,
+        direccion='Merced 186, Santiago, \nRegión Metropolitana \nChile',
+        subscrito=False)
+    
+    crear_usuario(
+        username='21665423-4',
+        tipo='Superusuario',
+        nombre='Carolina',	
+        apellido='Aguirre',
+        correo=test_user_email if test_user_email else 'caro.aguirre@duocuc.cl',
+        es_superusuario=True,
+        es_staff=True,
+        direccion='Santiago, \nRegión Metropolitana \nChile',
+        subscrito=False)
+    
+    crear_usuario(
+        username='21456622-2',
+        tipo='Superusuario',
+        nombre='Angel',	
+        apellido='Díaz',
+        correo=test_user_email if test_user_email else 'ange.diaz@duocuc.cl',
+        es_superusuario=True,
+        es_staff=True,
+        direccion='Santiago, \nRegión Metropolitana \nChile',
+        subscrito=False)
+    
+    crear_usuario(
+        username='21704499-5',
+        tipo='Superusuario',
+        nombre='Joaquín',	
+        apellido='Lagos',
+        correo=test_user_email if test_user_email else 'joa.lagos@duocuc.cl',
+        es_superusuario=True,
+        es_staff=True,
+        direccion='Maipú, \nRegión Metropolitana \nChile',
+        subscrito=False)
+    
+    crear_usuario(
         username='mcaceres',
         tipo='Cliente', 
         nombre='Mauricio', 
@@ -96,16 +140,7 @@ def poblar_bd(test_user_email=''):
         direccion='Calle F 304 J Goulart, \nLa Granja, Región Metropolitana \nChile', 
         subscrito=False)
 
-    crear_usuario(
-        username='gboric',
-        tipo='Superusuario',
-        nombre='Gabriel',
-        apellido='Boric',
-        correo=test_user_email if test_user_email else 'gboric@duocuc.cl',
-        es_superusuario=True,
-        es_staff=True,
-        direccion='	21 De Mayo 2144, Punta Arenas, \nMagallanes 90231 \nChile',
-        subscrito=False)
+    
     
     categorias_data = [
         { 'id': 1, 'nombre': 'Acción'},

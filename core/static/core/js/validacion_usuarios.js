@@ -61,75 +61,19 @@ $(document).ready(function() {
      });
 
   // Validar formulario de usuarios
-  $('#formulario_usuarios').validate(
+  $('#formulario_usuario').validate(
     {
       rules: {
         username: {
           required: true,
-        },
-        rut: {
-          required: true,
           rutChileno: true
         },
-        first_name: {
-          required: true,
-          soloLetras: true,
-          minlength: 3,
-          maxlength: 50
-        },
-        last_name: {
-          required: true,
-          soloLetras: true,
-          minlength: 5,
-          maxlength: 50
-        },
-        email: {
-          required: true,
-          emailCompleto: true,
-          email: true
-        },
-        direccion: {
-          required: true,
-          minlength: 10,
-          maxlength: 80,
-        },
-        tipo_usuario: {
-          required: true,
-        }
       },
       messages: {
         username: {
-          required: "El username es un campo requerido",
+          required: 'El RUT es un campo obligatorio.',
+          rutChileno: 'El RUT no es válido (escriba sin puntos y con guión)'
         },
-        rut: {
-          required: "El RUT es un campo requerido",
-          rutChileno: "El RUT no es válido (escriba sin puntos y con guión)"
-        },    
-        first_name: {
-          required: 'El nombre es un campo requerido',
-          minlength: 'El nombre debe tener un mínimo de 3 caracteres',
-          maxlength: 'El nombre debe tener un máximo de 50 caracteres',
-          soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
-        },
-        last_name: {
-          required: 'El apellido es un campo requerido',
-          minlength: 'El apellido debe tener un mínimo de 5 caracteres',
-          maxlength: 'El apellido debe tener un máximo de 50 caracteres',
-          soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
-        },
-        email: {
-          required: 'El correo es un campo obligatorio',
-          emailCompleto: 'Ingrese un correo válido',
-          email: 'Ingrese un correo válido'
-        },
-        direccion: {
-          required: 'La dirección es un campo requerido',
-          minlength: 'La dirección debe tener un mínimo de 10 caracteres',
-          maxlength: 'La dirección debe tener un máximo de 80 caracteres'
-        },
-        tipo_usuario: {
-          required: 'El tipo de usuario es un campo requerido',
-        }
       }
     }
   );

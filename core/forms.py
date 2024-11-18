@@ -134,14 +134,7 @@ class RegistroUsuarioForm(UserCreationForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
 class RegistroPerfilForm(forms.ModelForm):
-    rut = forms.CharField(
-        widget=forms.TextInput(attrs={
-            'class': 'input',
-            'required': True,
-            'name': 'rut'
-        }),
-        label="Rut"
-    )
+
     direccion = forms.CharField(
         widget=forms.Textarea(attrs={
             'class': 'input',
@@ -159,22 +152,14 @@ class RegistroPerfilForm(forms.ModelForm):
         }),
         label="Subscrito"
     )
-    imagen = forms.ImageField(
-        widget=forms.FileInput(attrs={
-            'class': 'input',
-            'required': False,
-            'name': 'imagen'
-        }),
-        label="Imagen"
-    )
+
 
     class Meta:
         model = Perfil 
-        fields = ['rut', 'direccion', 'subscrito', 'imagen']
+        fields = ['direccion', 'subscrito']
         exclude = ['tipo_usuario']
         widgets = {
-            'direccion': forms.Textarea(),
-            'imagen': forms.FileInput(),
+            'direccion': forms.Textarea()
         }
 
 
@@ -191,6 +176,9 @@ class UsuarioForm(ModelForm):
         fields = ['username', 'first_name', 'last_name', 'email']
         labels = {
             'email': 'E-mail',
+            'username': 'RUT',
+            'first_name': 'Nombre',
+            'last_name': 'Apellidos'
         }
 
 # PARA LA PAGINA MANTENEDOR DE USUARIOS:
