@@ -124,9 +124,6 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'usuarios' 'crear' '0' %}"> Usuarios </a></li>
               <li><a class="dropdown-item" href="{% url 'index' %}"> Horas </a></li>
-              {% if user.is_authenticated and user.is_superuser and user.is_active %}
-              <li><a class="dropdown-item" href="/admin"> Administrador de Django </a></li>
-              {% endif %}
             </ul>
           </li>
         {% endif %}  
