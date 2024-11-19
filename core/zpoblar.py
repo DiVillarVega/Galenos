@@ -98,12 +98,12 @@ def poblar_bd(test_user_email=''):
     
     crear_usuario(
         username='21665423-4',
-        tipo='Superusuario',
+        tipo='Cliente',
         nombre='Carolina',	
         apellido='Aguirre',
         correo=test_user_email if test_user_email else 'caro.aguirre@duocuc.cl',
-        es_superusuario=True,
-        es_staff=True,
+        es_superusuario=False,
+        es_staff=False,
         direccion='Santiago, \nRegión Metropolitana \nChile',
         subscrito=False)
     
