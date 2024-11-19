@@ -128,17 +128,6 @@ def poblar_bd(test_user_email=''):
         es_staff=True,
         direccion='Maipú, \nRegión Metropolitana \nChile',
         subscrito=False)
-    
-    crear_usuario(
-        username='mcaceres',
-        tipo='Cliente', 
-        nombre='Mauricio', 
-        apellido='Cáceres', 
-        correo=test_user_email if test_user_email else 'mcaceres@duocuc.cl', 
-        es_superusuario=False, 
-        es_staff=False,
-        direccion='Calle F 304 J Goulart, \nLa Granja, Región Metropolitana \nChile', 
-        subscrito=False)
 
     
     
